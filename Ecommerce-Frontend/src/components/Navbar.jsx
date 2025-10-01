@@ -23,7 +23,7 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
   const fetchData = async (value) => {
     try {
       const response = await axios.get(
-        "http://192.168.157.11:8080/api/products"
+        "http://16.176.147.135:8080/api/products"
       );
       setSearchResults(response.data);
       console.log(response.data);
@@ -38,7 +38,7 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
       setShowSearchResults(true);
       try {
         const response = await axios.get(
-          `http://192.168.157.11:8080/api/products/search?keyword=${value}`
+          `http://16.176.147.135:8080/api/products/search?keyword=${value}`
         );
         setSearchResults(response.data);
         setNoResults(response.data.length === 0);

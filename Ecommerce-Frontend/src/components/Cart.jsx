@@ -15,7 +15,7 @@ const Cart = () => {
     const fetchImagesAndUpdateCart = async () => {
       console.log("Cart", cart);
       try {
-        const response = await axios.get("http://192.168.157.11:8080/api/products");
+        const response = await axios.get("http://16.176.147.135:8080/api/products");
         const backendProductIds = response.data.map((product) => product.id);
 
         const updatedCartItems = cart.filter((item) => backendProductIds.includes(item.id));
@@ -23,7 +23,7 @@ const Cart = () => {
           updatedCartItems.map(async (item) => {
             try {
               const response = await axios.get(
-                `http://192.168.157.11:8080/api/product/${item.id}/image`,
+                `http://16.176.147.135:8080/api/product/${item.id}/image`,
                 { responseType: "blob" }
               );
               const imageFile = await converUrlToFile(response.data, response.data.imageName);
@@ -108,7 +108,7 @@ const Cart = () => {
         );
   
         await axios
-          .put(`http://192.168.157.11:8080/api/product/${item.id}`, cartProduct, {
+          .put(`http://16.176.147.135:8080/api/product/${item.id}`, cartProduct, {
             headers: {
               "Content-Type": "multipart/form-data",
             },

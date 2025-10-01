@@ -44,7 +44,7 @@ Ecommerce-Backend/
    * Update `application.properties`:
 
      ```properties
-     spring.datasource.url=jdbc:mysql://192.168.157.11:3306/ecommerce_db
+     spring.datasource.url=jdbc:mysql://16.176.147.135:3306/ecommerce_db
      spring.datasource.username=ecommerce
      spring.datasource.password=StrongPa55WorD
      ```
@@ -114,14 +114,14 @@ Ecommerce-Frontend/
    docker run --name=ecommerce-fe -dp 5173:80 ecommerce-fe:v1
    ```
 
-   This will launch the frontend at `http://192.168.157.11:5173`.
+   This will launch the frontend at `http://16.176.147.135:5173`.
 
 3. **Connect to Backend:**
 
    Update the backend URL in API service files (usually inside `src/` or `src/services/`) if needed:
 
    ```js
-   axios.get('http://192.168.157.11:8080/products')
+   axios.get('http://.168.157.11:8080/products')
    ```
 
 ### Features
